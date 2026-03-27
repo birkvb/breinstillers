@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Persoonlijke begeleiding bij chronische pijn",
+    "titleLine1": "Van overleven",
+    "titleLine2": "naar levendigheid",
+    "subtitle1": "Er komt een moment dat je veel hebt geprobeerd. Artsen, therapieën, goedbedoelde adviezen. En toch blijf je met lege handen zitten.",
+    "subtitle2": "Breinstillers is precies zo'n plek. Creëer rust in je hoofd en vertrouwen in je lichaam.",
+    "ctaPrimary": "Bekijk de 3-Daagse Training",
+    "ctaSecondary": "Hoe het werkt",
+    "socialProof": "Tientallen deelnemers",
+    "backgroundImage": "/images/grove-den-zonsondergang.jpg"
+  },
+  "painPoints": {
+    "title": "Herken je dit?",
+    "subtitle": "Je hebt alles geprobeerd, maar niets lijkt echt te werken. De goedbedoelde \"wat je niet doodt, maakt je sterker\" gaat voorbij aan wat je werkelijk doormaakt.",
+    "items": [
+      {
+        "title": "Eindeloos piekeren",
+        "text": "Je hoofd staat nooit stil. Zorgen, twijfels en gedachten houden je gevangen in een loop."
+      },
+      {
+        "title": "Vermoeidheid & isolement",
+        "text": "Je voelt je alleen in je strijd. Niemand lijkt echt te begrijpen wat je doormaakt."
+      },
+      {
+        "title": "Gemiste levendigheid",
+        "text": "Ergens weet je dat er meer is. Maar het voelt alsof dat leven buiten bereik is geraakt."
+      }
+    ]
+  },
+  "approach": {
+    "label": "Onze werkwijze",
+    "title": "Geen snelle oplossingen, maar echte verandering",
+    "text1": "Vanuit die plek is Breinstillers ontstaan. Geen focus op schijnbaar optimisme of snelle verandering, maar op het erkennen van de situatie zoals die werkelijk is.",
+    "text2": "Samen vinden we een route. Veilig, in contact. Creëer rust in je hoofd en vertrouwen in je lichaam, verkrijg ruimte om naar jouw wensen en waarden te leven.",
+    "image": "/images/zonsondergang-vetplant.jpg",
+    "bulletPoints": [
+      "Erkenning van jouw werkelijke situatie",
+      "Rust creëren in hoofd, hart én buik",
+      "Nieuwe perspectieven en verrassende inzichten",
+      "Van overleven naar levendigheid"
+    ]
+  },
+  "aboutBrief": {
+    "label": "Ontmoet Wietske",
+    "title": "Je vindt in mij een wijs geworden mens",
+    "text1": "Uit eigen ervaring weet ik hoe ingrijpend het is om te leven met chronische pijn en de impact die dit heeft.",
+    "text2": "Je vindt in mij een betrokken gids, met oprechte belangstelling voor het leven zoals het zich aandient — in al zijn onhandigheid én schoonheid.",
+    "text3": "Met verwondering, helderheid, moed en intuïtie loop ik graag een stukje met je mee.",
+    "portrait": "/images/wietske-portret.jpg"
+  },
+  "benefits": {
+    "label": "Wat levert het jou op?",
+    "title": "Ontdek jezelf. Vind jouw route.",
+    "subtitle": "In individuele gesprekken en de kleinschalige workshop verkennen we jouw obstakels en ontdekken wat mogelijk en wenselijk is voor jou.",
+    "items": [
+      { "title": "Niet meer alleen", "text": "De ervaring dat je niet alleen bent" },
+      { "title": "Ruimte in je hoofd", "text": "Ruimte in je hoofd, hart én in je buik" },
+      { "title": "Nieuwe inzichten", "text": "Nieuwe inzichten en verrassende perspectieven" },
+      { "title": "Zelfontdekking", "text": "Een verrassende ontdekking over jezelf" },
+      { "title": "Moed", "text": "Moed om stappen te zetten" },
+      { "title": "Betekenis", "text": "Meer betekenis, rust en verbinding" },
+      { "title": "Veiligheid", "text": "Een gevoel van veiligheid" },
+      { "title": "Levendigheid", "text": "Levendigheid en ruimte voor jezelf" }
+    ]
+  },
+  "training": {
+    "badge": "Beperkt aantal plekken",
+    "title": "3-Daagse Live Training Breinstillers",
+    "text1": "Drie zondagen verkennen we op creatieve wijze thema's die voor iedereen van belang zijn. Je ontdekt jezelf. Je vindt jouw route. Samen zijn we onderweg.",
+    "text2": "Een kleinschalige, intensieve ervaring waar je de ruimte krijgt om echt te landen. Geen grote groepen, maar persoonlijk contact en oprechte aandacht.",
+    "features": [
+      "Kleinschalige groep voor maximale persoonlijke aandacht",
+      "Creatieve werkvormen die verrassende inzichten opleveren",
+      "Combinatie van individuele en groepsoefeningen",
+      "Veilige omgeving met begeleiding door Wietske",
+      "Praktische handvatten die je direct kunt toepassen"
+    ],
+    "price": "€1.199",
+    "priceSubtext": "inclusief materiaal & persoonlijke begeleiding",
+    "dates": "3 zondagen — data in overleg",
+    "location": "Gorssel",
+    "groupSize": "Kleinschalige groep",
+    "schedule": "Volledige dagprogramma's",
+    "ctaText": "Meld je aan voor de Training"
+  },
+  "testimonials": {
+    "title": "Wat anderen zeggen",
+    "subtitle": "Anderen zeggen dat ik onverwachte nieuwe invalshoeken geef en dat ik verrassende perspectieven produceer.",
+    "items": [
+      {
+        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
+        "name": "Naam Deelnemer",
+        "role": "Deelnemer Training"
+      },
+      {
+        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
+        "name": "Naam Deelnemer",
+        "role": "Deelnemer Training"
+      },
+      {
+        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
+        "name": "Naam Deelnemer",
+        "role": "Deelnemer Training"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Je hoeft het niet alleen te doen",
+    "text": "We maken de reis samen. Neem vrijblijvend contact op voor meer informatie of plan een gesprek in Gorssel, online of telefonisch.",
+    "ctaPrimary": "Meld je aan voor de Training",
+    "ctaSecondary": "Stel een vraag"
+  }
+}

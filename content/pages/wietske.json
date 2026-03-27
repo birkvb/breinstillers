@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "label": "Over Wietske",
+    "title": "Een betrokken gids op jouw pad",
+    "text1": "Je vindt in mij een betrokken gids, met oprechte belangstelling voor het leven zoals het zich aandient — in al zijn onhandigheid én schoonheid.",
+    "text2": "",
+    "portrait": "/images/wietske-portret.jpg"
+  },
+  "background": {
+    "title": "",
+    "text1": "Uit eigen ervaring weet ik hoe ingrijpend het is om te leven met chronische pijn en de impact die dit heeft.",
+    "text2": "Ik put uit diverse bronnen, zoals: culturele antropologie, systemisch werk, gestalt, ACT — én mijn eigen jarenlange ervaring met yoga, meditatie, adem, klank, humor en creativiteit.",
+    "text3": "Mijn kracht ligt in het combineren van deze inzichten tot een werkwijze die licht en verdiepend tegelijk is. Met verwondering, helderheid, moed en intuïtie loop ik graag een stukje met je mee."
+  },
+  "whoIAm": {
+    "title": "Wie ik ben",
+    "text": "Ik ervaar mezelf als levendig, gevoelig, een bron van ideeën, creaties en inzichten voor levenskwesties. Ik weet dat ik kan bouwen op een goed stel hersens, maar vertrouwen op mijn intuïtie en gevoelsmatige waarneming, hebben me een completer mens gemaakt. Een zachter, mild, warm en veilig persoon.\n\nIk voel me gezegend met de combinatie van deze kwaliteiten en geniet van zowel mijn 'rekenkamer' als mijn ingevingen en innerlijk weten."
+  },
+  "training": {
+    "title": "Wat anderen zeggen",
+    "items": [
+      "Culturele antropologie",
+      "Systemisch werk",
+      "Gestalt",
+      "ACT (Acceptance and Commitment Therapy)",
+      "Yoga, meditatie & ademwerk",
+      "Klank, humor & creativiteit"
+    ]
+  },
+  "cta": {
+    "title": "Benieuwd of we bij elkaar passen?",
+    "text": "Neem vrijblijvend contact op. We bekijken samen wat de beste stap voor jou is."
+  }
+}
