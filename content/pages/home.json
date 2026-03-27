@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Persoonlijke begeleiding bij chronische pijn",
+    "badge": "Persoonlijke begeleiding bij chronische pijn test",
     "titleLine1": "Van overleven",
     "titleLine2": "naar levendigheid",
     "subtitle1": "Er komt een moment dat je veel hebt geprobeerd. Artsen, therapieën, goedbedoelde adviezen. En toch blijf je met lege handen zitten.",
@@ -54,14 +54,38 @@
     "title": "Ontdek jezelf. Vind jouw route.",
     "subtitle": "In individuele gesprekken en de kleinschalige workshop verkennen we jouw obstakels en ontdekken wat mogelijk en wenselijk is voor jou.",
     "items": [
-      { "title": "Niet meer alleen", "text": "De ervaring dat je niet alleen bent" },
-      { "title": "Ruimte in je hoofd", "text": "Ruimte in je hoofd, hart én in je buik" },
-      { "title": "Nieuwe inzichten", "text": "Nieuwe inzichten en verrassende perspectieven" },
-      { "title": "Zelfontdekking", "text": "Een verrassende ontdekking over jezelf" },
-      { "title": "Moed", "text": "Moed om stappen te zetten" },
-      { "title": "Betekenis", "text": "Meer betekenis, rust en verbinding" },
-      { "title": "Veiligheid", "text": "Een gevoel van veiligheid" },
-      { "title": "Levendigheid", "text": "Levendigheid en ruimte voor jezelf" }
+      {
+        "title": "Niet meer alleen",
+        "text": "De ervaring dat je niet alleen bent"
+      },
+      {
+        "title": "Ruimte in je hoofd",
+        "text": "Ruimte in je hoofd, hart én in je buik"
+      },
+      {
+        "title": "Nieuwe inzichten",
+        "text": "Nieuwe inzichten en verrassende perspectieven"
+      },
+      {
+        "title": "Zelfontdekking",
+        "text": "Een verrassende ontdekking over jezelf"
+      },
+      {
+        "title": "Moed",
+        "text": "Moed om stappen te zetten"
+      },
+      {
+        "title": "Betekenis",
+        "text": "Meer betekenis, rust en verbinding"
+      },
+      {
+        "title": "Veiligheid",
+        "text": "Een gevoel van veiligheid"
+      },
+      {
+        "title": "Levendigheid",
+        "text": "Levendigheid en ruimte voor jezelf"
+      }
     ]
   },
   "training": {
