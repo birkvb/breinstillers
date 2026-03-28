@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 type ContentData = Record<string, unknown>;
 
 interface FieldConfig {
   key: string;
   label: string;
-  type: "text" | "textarea" | "list" | "group";
+  type: "text" | "textarea" | "image" | "group";
   fields?: FieldConfig[];
 }
 
@@ -25,6 +25,7 @@ const homeFields: FieldConfig[] = [
       { key: "ctaPrimary", label: "Primaire knop", type: "text" },
       { key: "ctaSecondary", label: "Secundaire knop", type: "text" },
       { key: "socialProof", label: "Social proof tekst", type: "text" },
+      { key: "backgroundImage", label: "Achtergrondafbeelding", type: "image" },
     ],
   },
   {
@@ -45,6 +46,7 @@ const homeFields: FieldConfig[] = [
       { key: "title", label: "Titel", type: "text" },
       { key: "text1", label: "Tekst 1", type: "textarea" },
       { key: "text2", label: "Tekst 2", type: "textarea" },
+      { key: "image", label: "Afbeelding", type: "image" },
     ],
   },
   {
@@ -57,6 +59,7 @@ const homeFields: FieldConfig[] = [
       { key: "text1", label: "Tekst 1", type: "textarea" },
       { key: "text2", label: "Tekst 2", type: "textarea" },
       { key: "text3", label: "Tekst 3", type: "textarea" },
+      { key: "portrait", label: "Portretfoto", type: "image" },
     ],
   },
   {
@@ -118,6 +121,7 @@ const wietskeFields: FieldConfig[] = [
       { key: "label", label: "Label", type: "text" },
       { key: "title", label: "Titel", type: "text" },
       { key: "text1", label: "Tekst", type: "textarea" },
+      { key: "portrait", label: "Portretfoto", type: "image" },
     ],
   },
   {
@@ -187,16 +191,93 @@ function setValue(data: ContentData, path: string, value: string): ContentData {
   return result;
 }
 
+function ImageUpload({
+  value,
+  onChange,
+  password,
+  label,
+}: {
+  value: string;
+  onChange: (path: string) => void;
+  password: string;
+  label: string;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        headers: { "x-admin-password": password },
+        body: formData,
+      });
+      if (!res.ok) throw new Error("Upload mislukt");
+      const result = await res.json();
+      onChange(result.path);
+    } catch {
+      alert("Afbeelding uploaden mislukt. Probeer het opnieuw.");
+    } finally {
+      setUploading(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  };
+
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+      <div className="flex items-start gap-4">
+        {value && (
+          <div className="w-24 h-24 rounded-lg overflow-hidden bg-gray-100 shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={value} alt="" className="w-full h-full object-cover" />
+          </div>
+        )}
+        <div className="flex-1">
+          <p className="text-xs text-gray-500 mb-2">{value || "Geen afbeelding"}</p>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            onChange={handleUpload}
+            className="hidden"
+          />
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            disabled={uploading}
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50"
+          >
+            {uploading ? "Uploaden..." : value ? "Andere afbeelding kiezen" : "Afbeelding uploaden"}
+          </button>
+          <p className="text-xs text-gray-400 mt-1">
+            Na uploaden moet je nog op &quot;Opslaan&quot; klikken.
+            De website wordt dan binnen 1 minuut bijgewerkt.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function FieldInput({
   field,
   prefix,
   data,
   onChange,
+  password,
 }: {
   field: FieldConfig;
   prefix: string;
   data: ContentData;
   onChange: (path: string, value: string) => void;
+  password: string;
 }) {
   const path = prefix ? `${prefix}.${field.key}` : field.key;
 
@@ -205,13 +286,24 @@ function FieldInput({
       <div className="border border-gray-200 rounded-lg p-5 space-y-4 bg-white">
         <h3 className="font-semibold text-gray-800 text-lg">{field.label}</h3>
         {field.fields?.map((f) => (
-          <FieldInput key={f.key} field={f} prefix={path} data={data} onChange={onChange} />
+          <FieldInput key={f.key} field={f} prefix={path} data={data} onChange={onChange} password={password} />
         ))}
       </div>
     );
   }
 
   const value = getValue(data, path);
+
+  if (field.type === "image") {
+    return (
+      <ImageUpload
+        value={value}
+        onChange={(newPath) => onChange(path, newPath)}
+        password={password}
+        label={field.label}
+      />
+    );
+  }
 
   return (
     <div>
@@ -304,7 +396,6 @@ export default function AdminPage() {
       });
       if (!res.ok) throw new Error("Opslaan mislukt");
       setMessage("Opgeslagen! De website wordt binnen 1 minuut bijgewerkt.");
-      // Reload to get new sha
       await loadPage(activePage);
     } catch {
       setError("Opslaan mislukt. Probeer het opnieuw.");
@@ -346,7 +437,6 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold text-gray-800">Breinstillers Admin</h1>
@@ -360,7 +450,6 @@ export default function AdminPage() {
         </div>
       </header>
 
-      {/* Tabs */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 flex gap-1">
           {pages.map((page) => (
@@ -379,7 +468,6 @@ export default function AdminPage() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
         {message && (
           <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg text-sm">
@@ -403,6 +491,7 @@ export default function AdminPage() {
                 prefix=""
                 data={data}
                 onChange={handleFieldChange}
+                password={password}
               />
             ))}
           </div>
