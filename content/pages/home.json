@@ -1,18 +1,18 @@
 {
   "hero": {
-    "badge": "Persoonlijke begeleiding bij chronische pijn test",
+    "badge": "Persoonlijke begeleiding bij chronische pijn ",
     "titleLine1": "Van overleven",
     "titleLine2": "naar levendigheid",
-    "subtitle1": "Er komt een moment dat je veel hebt geprobeerd. Artsen, therapieën, goedbedoelde adviezen. En toch blijf je met lege handen zitten.",
-    "subtitle2": "Breinstillers is precies zo'n plek. Creëer rust in je hoofd en vertrouwen in je lichaam.",
+    "subtitle1": "Er komt een moment dat je al veel hebt geprobeerd. Artsen, therapieën, goedbedoelde adviezen. Je blijf met lege handen zitten. Althans zo voelt het. ",
+    "subtitle2": "Breinstillers is een plek om bij te komen. Creëer rust in je hoofd en vertrouwen in je lichaam.",
     "ctaPrimary": "Bekijk de 3-Daagse Training",
     "ctaSecondary": "Hoe het werkt",
-    "socialProof": "Tientallen deelnemers",
+    "socialProof": "Deze deelnemers",
     "backgroundImage": "/images/grove-den-zonsondergang.jpg"
   },
   "painPoints": {
     "title": "Herken je dit?",
-    "subtitle": "Je hebt alles geprobeerd, maar niets lijkt echt te werken. De goedbedoelde \"wat je niet doodt, maakt je sterker\" gaat voorbij aan wat je werkelijk doormaakt.",
+    "subtitle": "Je hebt van alles geprobeerd, maar niets lijkt echt te werken. Het goedbedoelde “what doesn’t kill you, makes you stronger\" gaat voorbij aan wat je werkelijk doormaakt.",
     "items": [
       {
         "title": "Eindeloos piekeren",
@@ -30,8 +30,8 @@
   },
   "approach": {
     "label": "Onze werkwijze",
-    "title": "Geen snelle oplossingen, maar echte verandering",
-    "text1": "Vanuit die plek is Breinstillers ontstaan. Geen focus op schijnbaar optimisme of snelle verandering, maar op het erkennen van de situatie zoals die werkelijk is.",
+    "title": "Geen snelle oplossingen, maar echt anders tevoorschijn komen",
+    "text1": "Breinstillers is ontstaan vanuit de noodzaak en wens om minder gevangen te kunnen leven, ondanks chronische pijn en andere aanhoudende moeilijkheden. Geen focus op schijnbaar optimisme of snelle verandering, maar op het erkennen van de situatie zoals die werkelijk is.",
     "text2": "Samen vinden we een route. Veilig, in contact. Creëer rust in je hoofd en vertrouwen in je lichaam, verkrijg ruimte om naar jouw wensen en waarden te leven.",
     "image": "/images/zonsondergang-vetplant.jpg",
     "bulletPoints": [
