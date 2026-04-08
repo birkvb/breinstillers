@@ -215,12 +215,12 @@ export default function Home() {
             </div>
 
             <div className="order-1 lg:order-2 relative">
-              <div className="aspect-square rounded-3xl overflow-hidden relative">
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden relative bg-sage-50">
                 <Image
                   src={aboutBrief.portrait}
                   alt="Wietske Hagg"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-3xl bg-sage-200/50" />
@@ -373,7 +373,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.items.map((item, i) => (
               <div
                 key={i}

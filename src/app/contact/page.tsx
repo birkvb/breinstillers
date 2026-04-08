@@ -123,7 +123,7 @@ export default function ContactPage() {
                     >
                       <option value="algemeen">Algemene vraag</option>
                       <option value="training">
-                        3-Daagse Training ({contactData.email ? "€1.199" : "€1.199"})
+                        3-Daagse Training (€799)
                       </option>
                       <option value="individueel">Individueel gesprek</option>
                       <option value="kennismaking">

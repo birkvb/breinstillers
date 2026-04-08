@@ -203,13 +203,20 @@ function ImageUpload({
   label: string;
 }) {
   const [uploading, setUploading] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [localPreview, setLocalPreview] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    // Show local preview immediately
+    const previewUrl = URL.createObjectURL(file);
+    setLocalPreview(previewUrl);
+
     setUploading(true);
+    setUploadSuccess(false);
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -221,7 +228,9 @@ function ImageUpload({
       if (!res.ok) throw new Error("Upload mislukt");
       const result = await res.json();
       onChange(result.path);
+      setUploadSuccess(true);
     } catch {
+      setLocalPreview(null);
       alert("Afbeelding uploaden mislukt. Probeer het opnieuw.");
     } finally {
       setUploading(false);
@@ -233,10 +242,10 @@ function ImageUpload({
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
       <div className="flex items-start gap-4">
-        {value && (
+        {(localPreview || value) && (
           <div className="w-24 h-24 rounded-lg overflow-hidden bg-gray-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={value} alt="" className="w-full h-full object-cover" />
+            <img src={localPreview || value} alt="" className="w-full h-full object-cover" />
           </div>
         )}
         <div className="flex-1">
@@ -256,10 +265,16 @@ function ImageUpload({
           >
             {uploading ? "Uploaden..." : value ? "Andere afbeelding kiezen" : "Afbeelding uploaden"}
           </button>
-          <p className="text-xs text-gray-400 mt-1">
-            Na uploaden moet je nog op &quot;Opslaan&quot; klikken.
-            De website wordt dan binnen 1 minuut bijgewerkt.
-          </p>
+          {uploadSuccess ? (
+            <p className="text-xs text-green-600 font-medium mt-1">
+              Afbeelding geüpload! Klik nu hierboven op &quot;Opslaan&quot; om de wijziging door te voeren.
+            </p>
+          ) : (
+            <p className="text-xs text-gray-400 mt-1">
+              Na uploaden moet je nog op &quot;Opslaan&quot; klikken.
+              De website wordt dan binnen 1 minuut bijgewerkt.
+            </p>
+          )}
         </div>
       </div>
     </div>

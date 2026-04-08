@@ -15,16 +15,16 @@
     "subtitle": "Je hebt van alles geprobeerd, maar niets lijkt echt te werken. Het goedbedoelde “what doesn’t kill you, makes you stronger\" gaat voorbij aan wat je werkelijk doormaakt.",
     "items": [
       {
-        "title": "Eindeloos piekeren",
-        "text": "Je hoofd staat nooit stil. Zorgen, twijfels en gedachten houden je gevangen in een loop."
-      },
-      {
         "title": "Vermoeidheid & isolement",
         "text": "Je voelt je alleen in je strijd. Niemand lijkt echt te begrijpen wat je doormaakt."
       },
       {
         "title": "Gemiste levendigheid",
         "text": "Ergens weet je dat er meer is. Maar het voelt alsof dat leven buiten bereik is geraakt."
+      },
+      {
+        "title": "Eindeloze gedachten",
+        "text": "Je hoofd staat zelden stil. Zorgen, twijfels en gedachten houden je in hun greep."
       }
     ]
   },
@@ -113,19 +113,24 @@
     "subtitle": "Anderen zeggen dat ik onverwachte nieuwe invalshoeken geef en dat ik verrassende perspectieven produceer.",
     "items": [
       {
-        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
-        "name": "Naam Deelnemer",
-        "role": "Deelnemer Training"
+        "quote": "De workshop bood een ontzettend veilige en fijne sfeer, mede dankzij Wietske, die rustig, duidelijk en respectvol begeleidt. Het was een mooie combinatie van creativiteit en diepgang, waarbij ik waardevolle inzichten kreeg die ik daarna echt kon loslaten. Een heel zinvolle en goed doordachte ervaring.",
+        "name": "Deelnemer",
+        "role": "Workshop deelnemer"
       },
       {
-        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
-        "name": "Naam Deelnemer",
-        "role": "Deelnemer Training"
+        "quote": "De locatie was prachtig, met heerlijke hapjes en een ontspannen sfeer. Het tempo en de tijdsplanning waren perfect: niet te lang, niet te kort. Ik voelde me gezien en gerespecteerd, en kreeg energie en inspiratie voor de toekomst.",
+        "name": "Deelnemer",
+        "role": "Workshop deelnemer"
       },
       {
-        "quote": "Testimonial komt hier — een krachtige ervaring van een deelnemer die vertelt over de transformatie die ze heeft doorgemaakt.",
-        "name": "Naam Deelnemer",
-        "role": "Deelnemer Training"
+        "quote": "De workshop is een gezellige en ontspannen manier om jezelf beter te leren kennen. De interactie met andere deelnemers voegt veel waarde toe; het is fijn om te zien hoe anderen met thema's omgaan. Wietske begeleidt persoonlijk, met voorbeelden en respect voor ieders grenzen, waardoor alles er mag zijn.",
+        "name": "Deelnemer",
+        "role": "Workshop deelnemer"
+      },
+      {
+        "quote": "Deze workshop gaf me concreet inzicht in hoe snel ik verdwaal in de mist van mijn gedachten en patronen. Door Wietske's rustige begeleiding kon ik dingen beter in het vizier krijgen en stappen zetten. Het was helpend, inzichtgevend en gaf ruimte voor heling op thema's die ik daarna los kon laten.",
+        "name": "Deelnemer",
+        "role": "Workshop deelnemer"
       }
     ]
   },
