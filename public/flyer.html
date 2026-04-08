@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breinstillers Flyer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 148mm 210mm;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .flyer {
+    width: 148mm;
+    height: 210mm;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .flyer { box-shadow: none; }
+  }
+
+  /* Soft green accent bar top */
+  .top-bar {
+    height: 6mm;
+    background: linear-gradient(135deg, #6b7c5e, #8a9a7b);
+  }
+
+  .content {
+    padding: 7mm 9mm 6mm;
+    display: flex;
+    flex-direction: column;
+    height: calc(210mm - 6mm);
+  }
+
+  /* Logo / brand */
+  .brand {
+    text-align: center;
+    margin-bottom: 5mm;
+  }
+
+  .brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22pt;
+    color: #3d4a35;
+    letter-spacing: 0.5px;
+  }
+
+  .brand .tagline {
+    font-size: 9pt;
+    color: #8a9a7b;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 1.5mm;
+  }
+
+  /* Divider */
+  .divider {
+    width: 30mm;
+    height: 0.5px;
+    background: #c5d1b8;
+    margin: 4mm auto;
+  }
+
+  /* Main message */
+  .main-message {
+    text-align: center;
+    margin-bottom: 5mm;
+  }
+
+  .main-message h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14pt;
+    color: #3d4a35;
+    line-height: 1.4;
+    margin-bottom: 3mm;
+  }
+
+  .main-message p {
+    font-size: 8.5pt;
+    color: #5c6a52;
+    line-height: 1.6;
+    max-width: 115mm;
+    margin: 0 auto;
+  }
+
+  /* Value blocks */
+  .values {
+    display: flex;
+    gap: 3mm;
+    margin-bottom: 5mm;
+  }
+
+  .value-card {
+    flex: 1;
+    background: #f7f9f5;
+    border-radius: 3mm;
+    padding: 4mm;
+    text-align: center;
+  }
+
+  .value-card .dot {
+    width: 6mm;
+    height: 6mm;
+    background: #c5d1b8;
+    border-radius: 50%;
+    margin: 0 auto 2mm;
+  }
+
+  .value-card h3 {
+    font-size: 8pt;
+    color: #3d4a35;
+    font-weight: 600;
+    margin-bottom: 1mm;
+  }
+
+  .value-card p {
+    font-size: 7pt;
+    color: #6b7c5e;
+    line-height: 1.4;
+  }
+
+  /* About Wietske */
+  .about {
+    background: #f7f9f5;
+    border-radius: 3mm;
+    padding: 5mm;
+    margin-bottom: 5mm;
+    display: flex;
+    gap: 4mm;
+    align-items: flex-start;
+  }
+
+  .about-accent {
+    width: 1mm;
+    min-height: 100%;
+    background: #8a9a7b;
+    border-radius: 1mm;
+    flex-shrink: 0;
+  }
+
+  .about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 10pt;
+    color: #3d4a35;
+    margin-bottom: 2mm;
+  }
+
+  .about-text p {
+    font-size: 7.5pt;
+    color: #5c6a52;
+    line-height: 1.55;
+  }
+
+  .about-text .signature {
+    font-style: italic;
+    color: #8a9a7b;
+    margin-top: 2mm;
+    font-size: 7.5pt;
+  }
+
+  /* Quote */
+  .quote {
+    text-align: center;
+    margin-bottom: 5mm;
+    padding: 0 5mm;
+  }
+
+  .quote p {
+    font-style: italic;
+    font-size: 7.5pt;
+    color: #6b7c5e;
+    line-height: 1.5;
+  }
+
+  .quote .attr {
+    font-style: normal;
+    font-size: 6.5pt;
+    color: #8a9a7b;
+    margin-top: 1.5mm;
+  }
+
+  /* CTA */
+  .cta {
+    margin-top: auto;
+    text-align: center;
+    background: linear-gradient(135deg, #3d4a35, #5c6a52);
+    border-radius: 3mm;
+    padding: 5mm;
+    color: #fff;
+  }
+
+  .cta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 10.5pt;
+    margin-bottom: 2.5mm;
+  }
+
+  .cta .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 5mm;
+    font-size: 7.5pt;
+    opacity: 0.9;
+  }
+
+  .cta .website {
+    font-size: 9pt;
+    font-weight: 600;
+    margin-top: 2mm;
+    letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+  <div class="flyer">
+    <div class="top-bar"></div>
+    <div class="content">
+
+      <!-- Brand -->
+      <div class="brand">
+        <h1>Breinstillers</h1>
+        <div class="tagline">Persoonlijke begeleiding bij chronische pijn</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Main message -->
+      <div class="main-message">
+        <h2>Van overleven<br>naar levendigheid</h2>
+        <p>
+          Je hebt al veel geprobeerd. Artsen, therapieën, goedbedoelde adviezen.
+          En toch blijf je zitten met het gevoel dat er meer moet zijn.
+          Dat klopt. En daar begint het.
+        </p>
+      </div>
+
+      <!-- 3 value cards -->
+      <div class="values">
+        <div class="value-card">
+          <div class="dot"></div>
+          <h3>Rust</h3>
+          <p>Creëer rust in je hoofd, hart én buik</p>
+        </div>
+        <div class="value-card">
+          <div class="dot"></div>
+          <h3>Inzicht</h3>
+          <p>Verrassende perspectieven en nieuwe inzichten</p>
+        </div>
+        <div class="value-card">
+          <div class="dot"></div>
+          <h3>Verbinding</h3>
+          <p>De ervaring dat je er niet alleen voor staat</p>
+        </div>
+      </div>
+
+      <!-- About Wietske -->
+      <div class="about">
+        <div class="about-accent"></div>
+        <div class="about-text">
+          <h3>Over Wietske</h3>
+          <p>
+            Uit eigen ervaring weet ik hoe ingrijpend het is om te leven met
+            chronische pijn. Je vindt in mij een betrokken gids, met oprechte
+            belangstelling voor het leven zoals het zich aandient — in al zijn
+            onhandigheid én schoonheid.
+          </p>
+          <p class="signature">— Wietske Hagg</p>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <div class="quote">
+        <p>&ldquo;Een ontzettend veilige en fijne sfeer. Een mooie combinatie
+        van creativiteit en diepgang, waarbij ik waardevolle inzichten kreeg.&rdquo;</p>
+        <p class="attr">— Workshop deelnemer</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta">
+        <h3>Benieuwd? Neem vrijblijvend contact op.</h3>
+        <div class="contact-row">
+          <span>Wietske@breinstillers.nl</span>
+          <span>•</span>
+          <span>06 - 1111 9986</span>
+        </div>
+        <div class="website">breinstillers.nl</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
