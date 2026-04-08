@@ -16,15 +16,18 @@
     "items": [
       {
         "title": "Vermoeidheid & isolement",
-        "text": "Je voelt je alleen in je strijd. Niemand lijkt echt te begrijpen wat je doormaakt."
+        "text": "Je voelt je alleen in je strijd. Niemand lijkt echt te begrijpen wat je doormaakt.",
+        "icon": "Brain"
       },
       {
         "title": "Gemiste levendigheid",
-        "text": "Ergens weet je dat er meer is. Maar het voelt alsof dat leven buiten bereik is geraakt."
+        "text": "Ergens weet je dat er meer is. Maar het voelt alsof dat leven buiten bereik is geraakt.",
+        "icon": "Heart"
       },
       {
         "title": "Eindeloze gedachten",
-        "text": "Je hoofd staat zelden stil. Zorgen, twijfels en gedachten houden je in hun greep."
+        "text": "Je hoofd staat zelden stil. Zorgen, twijfels en gedachten houden je in hun greep.",
+        "icon": "Eye"
       }
     ]
   },
@@ -56,35 +59,43 @@
     "items": [
       {
         "title": "Niet meer alleen",
-        "text": "De ervaring dat je niet alleen bent"
+        "text": "De ervaring dat je niet alleen bent",
+        "icon": "Users"
       },
       {
         "title": "Ruimte in je hoofd",
-        "text": "Ruimte in je hoofd, hart én in je buik"
+        "text": "Ruimte in je hoofd, hart én in je buik",
+        "icon": "Brain"
       },
       {
         "title": "Nieuwe inzichten",
-        "text": "Nieuwe inzichten en verrassende perspectieven"
+        "text": "Nieuwe inzichten en verrassende perspectieven",
+        "icon": "Sparkles"
       },
       {
         "title": "Zelfontdekking",
-        "text": "Een verrassende ontdekking over jezelf"
+        "text": "Een verrassende ontdekking over jezelf",
+        "icon": "Eye"
       },
       {
         "title": "Moed",
-        "text": "Moed om stappen te zetten"
+        "text": "Moed om stappen te zetten",
+        "icon": "Compass"
       },
       {
         "title": "Betekenis",
-        "text": "Meer betekenis, rust en verbinding"
+        "text": "Meer betekenis, rust en verbinding",
+        "icon": "Heart"
       },
       {
         "title": "Veiligheid",
-        "text": "Een gevoel van veiligheid"
+        "text": "Een gevoel van veiligheid",
+        "icon": "Shield"
       },
       {
         "title": "Levendigheid",
-        "text": "Levendigheid en ruimte voor jezelf"
+        "text": "Levendigheid en ruimte voor jezelf",
+        "icon": "Flame"
       }
     ]
   },

@@ -15,11 +15,23 @@ import {
   Calendar,
   MapPin,
   Clock,
+  Sun,
+  Leaf,
+  Hand,
+  Lightbulb,
+  Target,
+  Smile,
+  TreePine,
+  Mountain,
+  type LucideIcon,
 } from "lucide-react";
 import homeData from "../../content/pages/home.json";
 
-const painPointIcons = [Brain, Heart, Eye];
-const benefitIcons = [Users, Brain, Sparkles, Eye, Compass, Heart, Shield, Flame];
+const iconMap: Record<string, LucideIcon> = {
+  Heart, Brain, Sparkles, Shield, Users, Eye, Compass, Flame, Star,
+  Sun, Leaf, Hand, Lightbulb, Target, Smile, TreePine, Mountain,
+  Calendar, MapPin, Clock, Check,
+};
 
 export default function Home() {
   const { hero, painPoints, approach, aboutBrief, benefits, training, testimonials, finalCta } = homeData;
@@ -108,8 +120,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {painPoints.items.map((item, index) => {
-              const Icon = painPointIcons[index] || Brain;
+            {painPoints.items.map((item) => {
+              const Icon = iconMap[item.icon] || Brain;
               return (
                 <div
                   key={item.title}
@@ -245,8 +257,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
-            {benefits.items.map((item, index) => {
-              const Icon = benefitIcons[index] || Heart;
+            {benefits.items.map((item) => {
+              const Icon = iconMap[item.icon] || Heart;
               return (
                 <div
                   key={item.title}
