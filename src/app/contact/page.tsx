@@ -208,8 +208,7 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm text-sage-600/60 mb-1">Locatie</p>
                       <p className="text-sage-700 font-medium">
-                        {contactData.address}
-                        <br />
+                        {contactData.address && <>{contactData.address}<br /></>}
                         {contactData.city}
                       </p>
                       <p className="text-sm text-sage-600/60 mt-1">

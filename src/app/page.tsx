@@ -470,7 +470,6 @@ export default function Home() {
             email: "Wietske@breinstillers.nl",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Ravensweerdweg 19",
               addressLocality: "Gorssel",
               addressCountry: "NL",
             },
