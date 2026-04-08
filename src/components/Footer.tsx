@@ -81,7 +81,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="text-lime shrink-0 mt-0.5" />
                 <span className="text-sage-200">
-                  Ravensweerdweg 19, Gorssel
+                  Gorssel
                 </span>
               </li>
             </ul>
