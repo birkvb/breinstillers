@@ -18,7 +18,7 @@ export default function Header() {
               alt="Breinstillers"
               width={32}
               height={32}
-              className="h-8 w-auto"
+              className="h-8 w-auto mix-blend-multiply"
             />
             <span className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-bold text-sage-700">
               Breinstillers
