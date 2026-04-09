@@ -14,11 +14,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/logo-breinstillers.png"
+              src="/images/logo-boom.png"
               alt="Breinstillers"
               width={32}
               height={32}
-              className="h-8 w-auto mix-blend-screen"
+              className="h-8 w-auto"
             />
             <span className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-bold text-sage-700">
               Breinstillers
