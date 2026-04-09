@@ -16,9 +16,9 @@ export default function Header() {
             <Image
               src="/images/logo-boom.png"
               alt="Breinstillers"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
             />
             <span className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-bold text-sage-700">
               Breinstillers
