@@ -8,6 +8,23 @@ import { Menu, X } from "lucide-react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Reliably scroll to a section when already on the home page.
+  // (Next.js <Link> hash navigation is unreliable after scrolling.)
+  const handleSectionClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    setIsOpen(false);
+    if (window.location.pathname === "/") {
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth" });
+        window.history.replaceState(null, "", `/#${id}`);
+      }
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-warm-50/80 backdrop-blur-lg border-b border-sage-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -29,6 +46,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/#aanbod"
+              onClick={(e) => handleSectionClick(e, "aanbod")}
               className="text-sage-600 hover:text-sage-700 transition-colors text-sm font-medium"
             >
               Aanbod
@@ -47,6 +65,7 @@ export default function Header() {
             </Link>
             <Link
               href="/#training"
+              onClick={(e) => handleSectionClick(e, "training")}
               className="inline-flex items-center px-5 py-2.5 bg-sage-500 text-white rounded-full text-sm font-semibold hover:bg-sage-600 transition-all hover:scale-105 shadow-lg shadow-sage-500/25"
             >
               Bekijk de Training
@@ -68,7 +87,7 @@ export default function Header() {
           <nav className="md:hidden pb-6 border-t border-sage-100 pt-4 flex flex-col gap-4">
             <Link
               href="/#aanbod"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleSectionClick(e, "aanbod")}
               className="text-sage-600 hover:text-sage-700 transition-colors font-medium"
             >
               Aanbod
@@ -89,7 +108,7 @@ export default function Header() {
             </Link>
             <Link
               href="/#training"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleSectionClick(e, "training")}
               className="inline-flex items-center justify-center px-5 py-2.5 bg-sage-500 text-white rounded-full font-semibold hover:bg-sage-600 transition-all"
             >
               Bekijk de Training

@@ -73,19 +73,19 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up">
-              <Link
+              <a
                 href="#training"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-lime text-sage-800 rounded-full text-lg font-bold hover:bg-lime-dark transition-all hover:scale-105 shadow-xl"
               >
                 {hero.ctaPrimary}
                 <ArrowRight size={20} />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#werkwijze"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white rounded-full text-lg font-semibold hover:bg-white/10 transition-all"
               >
                 {hero.ctaSecondary}
-              </Link>
+              </a>
             </div>
 
             <div className="mt-12 flex items-center gap-4 animate-fade-up">
@@ -143,7 +143,7 @@ export default function Home() {
       </section>
 
       {/* ===== SOLUTION / APPROACH ===== */}
-      <section id="werkwijze" className="py-20 sm:py-28 bg-sage-50">
+      <section id="werkwijze" className="scroll-mt-24 py-20 sm:py-28 bg-sage-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* ===== BENEFITS ===== */}
-      <section id="aanbod" className="py-20 sm:py-28 bg-sage-50">
+      <section id="aanbod" className="scroll-mt-24 py-20 sm:py-28 bg-sage-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-lime/20 rounded-full text-sage-600 text-sm font-medium mb-6">
@@ -280,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* ===== TRAINING OFFER (PRIMARY CTA) ===== */}
-      <section id="training" className="py-20 sm:py-28 bg-white">
+      <section id="training" className="scroll-mt-24 py-20 sm:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sage-700 via-sage-600 to-sage-800 p-8 sm:p-12 lg:p-16">
             <div className="absolute top-0 right-0 w-64 h-64 bg-lime/10 rounded-full blur-3xl" />
