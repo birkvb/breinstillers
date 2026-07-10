@@ -15,6 +15,7 @@ import {
   Calendar,
   MapPin,
   Clock,
+  Download,
   Sun,
   Leaf,
   Hand,
@@ -317,6 +318,7 @@ export default function Home() {
                 </ul>
               </div>
 
+              <div>
               <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-2xl">
                 <div className="text-center mb-8">
                   <p className="text-sage-500 font-semibold text-sm uppercase tracking-wider mb-2">
@@ -367,6 +369,17 @@ export default function Home() {
                   </Link>{" "}
                   op voor meer informatie
                 </p>
+              </div>
+
+                <a
+                  href="/folder-breinstillers.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center justify-center gap-2 w-full text-center px-8 py-4 bg-lime text-sage-800 rounded-full text-lg font-semibold hover:bg-lime-dark transition-all hover:scale-105 shadow-lg shadow-lime/25"
+                >
+                  <Download size={20} />
+                  Download folder
+                </a>
               </div>
             </div>
           </div>
