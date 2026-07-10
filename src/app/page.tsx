@@ -371,15 +371,17 @@ export default function Home() {
                 </p>
               </div>
 
-                <a
-                  href="/folder-breinstillers.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 flex items-center justify-center gap-2 w-full text-center px-8 py-4 bg-lime text-sage-800 rounded-full text-lg font-semibold hover:bg-lime-dark transition-all hover:scale-105 shadow-lg shadow-lime/25"
-                >
-                  <Download size={20} />
-                  Download folder
-                </a>
+                {training.folderUrl && (
+                  <a
+                    href={training.folderUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 flex items-center justify-center gap-2 w-full text-center px-8 py-4 bg-lime text-sage-800 rounded-full text-lg font-semibold hover:bg-lime-dark transition-all hover:scale-105 shadow-lg shadow-lime/25"
+                  >
+                    <Download size={20} />
+                    {training.folderButtonText || "Download folder"}
+                  </a>
+                )}
               </div>
             </div>
           </div>

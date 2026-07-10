@@ -120,7 +120,9 @@
     "location": "Gorssel",
     "groupSize": "Kleinschalige groep, max 5 deelnemers ",
     "schedule": "Volledige dagprogramma's",
-    "ctaText": "Meld je aan voor de Training"
+    "ctaText": "Meld je aan voor de Training",
+    "folderButtonText": "Download folder",
+    "folderUrl": "/folder-breinstillers.pdf"
   },
   "testimonials": {
     "title": "Wat anderen zeggen",

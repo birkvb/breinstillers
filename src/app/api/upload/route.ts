@@ -21,7 +21,11 @@ export async function POST(request: NextRequest) {
     .toLowerCase()
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9\-_.]/g, "");
-  const path = `public/images/${safeName}`;
+
+  // Images go to public/images, other files (e.g. PDFs) to public/files
+  const isImage = file.type.startsWith("image/");
+  const dir = isImage ? "images" : "files";
+  const path = `public/${dir}/${safeName}`;
 
   const bytes = await file.arrayBuffer();
   const base64 = Buffer.from(bytes).toString("base64");
@@ -46,7 +50,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        message: `Upload image: ${safeName}`,
+        message: `Upload ${isImage ? "image" : "file"}: ${safeName}`,
         content: base64,
         ...(sha ? { sha } : {}),
       }),
@@ -58,5 +62,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: err.message }, { status: res.status });
   }
 
-  return NextResponse.json({ path: `/images/${safeName}` });
+  return NextResponse.json({ path: `/${dir}/${safeName}` });
 }

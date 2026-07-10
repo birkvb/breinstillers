@@ -29,7 +29,7 @@ const AVAILABLE_ICONS = [
 interface FieldConfig {
   key: string;
   label: string;
-  type: "text" | "textarea" | "image" | "icon" | "group" | "array";
+  type: "text" | "textarea" | "image" | "file" | "icon" | "group" | "array";
   fields?: FieldConfig[];
   itemLabel?: string; // For arrays: label prefix per item
 }
@@ -146,6 +146,8 @@ const homeFields: FieldConfig[] = [
       { key: "groupSize", label: "Groepsgrootte", type: "text" },
       { key: "schedule", label: "Programma", type: "text" },
       { key: "ctaText", label: "Aanmeld knop tekst", type: "text" },
+      { key: "folderButtonText", label: "Download-knop tekst", type: "text" },
+      { key: "folderUrl", label: "Download folder (PDF)", type: "file" },
     ],
   },
   {
@@ -352,6 +354,61 @@ function ImageUpload({ value, onChange, password, label }: { value: string; onCh
   );
 }
 
+// ─── File upload (PDF e.d.) ───
+function FileUpload({ value, onChange, password, label }: { value: string; onChange: (p: string) => void; password: string; label: string }) {
+  const [uploading, setUploading] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setUploadSuccess(false);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/upload", { method: "POST", headers: { "x-admin-password": password }, body: fd });
+      if (!res.ok) throw new Error();
+      const result = await res.json();
+      onChange(result.path);
+      setUploadSuccess(true);
+    } catch {
+      alert("Bestand uploaden mislukt. Probeer het opnieuw.");
+    } finally {
+      setUploading(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  };
+
+  const fileName = value ? value.split("/").pop() : "";
+
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+      {value ? (
+        <p className="text-xs text-gray-500 mb-2 truncate max-w-xs">
+          Huidig bestand:{" "}
+          <a href={value} target="_blank" rel="noopener noreferrer" className="text-green-600 underline">
+            {fileName}
+          </a>
+        </p>
+      ) : (
+        <p className="text-xs text-gray-500 mb-2">Geen bestand</p>
+      )}
+      <input ref={fileRef} type="file" accept="application/pdf" onChange={handleUpload} className="hidden" />
+      <button type="button" onClick={() => fileRef.current?.click()} disabled={uploading} className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50">
+        {uploading ? "Uploaden..." : value ? "Ander bestand (PDF)" : "PDF uploaden"}
+      </button>
+      {uploadSuccess ? (
+        <p className="text-xs text-green-600 font-medium mt-1">Gelukt! Klik op &quot;Opslaan&quot; om door te voeren.</p>
+      ) : (
+        <p className="text-xs text-gray-400 mt-1">Na uploaden nog op &quot;Opslaan&quot; klikken.</p>
+      )}
+    </div>
+  );
+}
+
 // ─── Icon picker ───
 function IconPicker({ value, onChange, label }: { value: string; onChange: (v: string) => void; label: string }) {
   return (
@@ -528,6 +585,10 @@ function FieldInput({ field, prefix, data, onChange, password }: { field: FieldC
 
   if (field.type === "image") {
     return <ImageUpload value={strVal} onChange={(v) => onChange(path, v)} password={password} label={field.label} />;
+  }
+
+  if (field.type === "file") {
+    return <FileUpload value={strVal} onChange={(v) => onChange(path, v)} password={password} label={field.label} />;
   }
 
   if (field.type === "icon") {
