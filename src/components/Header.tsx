@@ -58,6 +58,12 @@ export default function Header() {
               Over Wietske
             </Link>
             <Link
+              href="/tarieven"
+              className="text-sage-600 hover:text-sage-700 transition-colors text-sm font-medium"
+            >
+              Tarieven
+            </Link>
+            <Link
               href="/contact"
               className="text-sage-600 hover:text-sage-700 transition-colors text-sm font-medium"
             >
@@ -98,6 +104,13 @@ export default function Header() {
               className="text-sage-600 hover:text-sage-700 transition-colors font-medium"
             >
               Over Wietske
+            </Link>
+            <Link
+              href="/tarieven"
+              onClick={() => setIsOpen(false)}
+              className="text-sage-600 hover:text-sage-700 transition-colors font-medium"
+            >
+              Tarieven
             </Link>
             <Link
               href="/contact"

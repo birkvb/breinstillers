@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import contactData from "../../../content/pages/contact.json";
@@ -13,6 +13,18 @@ export default function ContactPage() {
     onderwerp: "algemeen",
     bericht: "",
   });
+
+  // Onderwerp voorselecteren op basis van ?onderwerp= in de URL
+  useEffect(() => {
+    const onderwerp = new URLSearchParams(window.location.search).get("onderwerp");
+    if (
+      onderwerp &&
+      ["algemeen", "training", "individueel", "kennismaking"].includes(onderwerp)
+    ) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reads browser URL after mount; runs post-hydration so no mismatch
+      setFormData((prev) => ({ ...prev, onderwerp }));
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

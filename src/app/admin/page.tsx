@@ -239,6 +239,66 @@ const wietskeFields: FieldConfig[] = [
   },
 ];
 
+const tarievenFields: FieldConfig[] = [
+  {
+    key: "hero",
+    label: "Hero (bovenkant pagina)",
+    type: "group",
+    fields: [
+      { key: "label", label: "Label", type: "text" },
+      { key: "title", label: "Titel", type: "text" },
+      { key: "subtitle", label: "Ondertitel", type: "textarea" },
+    ],
+  },
+  {
+    key: "training",
+    label: "3-Daagse Training (tarief)",
+    type: "group",
+    fields: [
+      { key: "title", label: "Titel", type: "text" },
+      { key: "price", label: "Prijs", type: "text" },
+      { key: "description", label: "Omschrijving", type: "textarea" },
+      { key: "ctaText", label: "Knop tekst", type: "text" },
+    ],
+  },
+  {
+    key: "individual",
+    label: "Individueel gesprek (tarief)",
+    type: "group",
+    fields: [
+      { key: "title", label: "Titel", type: "text" },
+      { key: "price", label: "Prijs", type: "text" },
+      { key: "priceUnit", label: "Prijs eenheid (bijv. per uur)", type: "text" },
+      { key: "description", label: "Omschrijving", type: "textarea" },
+      { key: "ctaText", label: "Knop tekst", type: "text" },
+    ],
+  },
+  { key: "packagesTitle", label: "Pakketten — titel", type: "text" },
+  { key: "packagesSubtitle", label: "Pakketten — ondertitel", type: "textarea" },
+  {
+    key: "packages",
+    label: "Pakketten individuele gesprekken",
+    type: "array",
+    itemLabel: "Pakket",
+    fields: [
+      { key: "name", label: "Naam", type: "text" },
+      { key: "sessions", label: "Aantal gesprekken", type: "text" },
+      { key: "price", label: "Prijs", type: "text" },
+      { key: "description", label: "Korte omschrijving", type: "textarea" },
+    ],
+  },
+  {
+    key: "finalCta",
+    label: "Afsluitende sectie",
+    type: "group",
+    fields: [
+      { key: "title", label: "Titel", type: "text" },
+      { key: "text", label: "Tekst", type: "textarea" },
+      { key: "ctaText", label: "Knop tekst", type: "text" },
+    ],
+  },
+];
+
 const contactFields: FieldConfig[] = [
   { key: "title", label: "Pagina titel", type: "text" },
   { key: "subtitle", label: "Ondertitel", type: "textarea" },
@@ -251,6 +311,7 @@ const contactFields: FieldConfig[] = [
 const pages = [
   { id: "home", label: "Homepagina", fields: homeFields },
   { id: "wietske", label: "Over Wietske", fields: wietskeFields },
+  { id: "tarieven", label: "Tarieven", fields: tarievenFields },
   { id: "contact", label: "Contact", fields: contactFields },
 ];
 

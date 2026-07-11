@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "label": "Tarieven",
+    "title": "Helder en eerlijk over de kosten",
+    "subtitle": "Of je nu kiest voor de driedaagse training of voor een individueel gesprek — je weet vooraf precies waar je aan toe bent."
+  },
+  "training": {
+    "title": "3-Daagse Live Training",
+    "price": "€799,-",
+    "description": "Drie zondagen in een kleinschalige groep. Inclusief materiaal, lunch, persoonlijke begeleiding, intakegesprek en individuele nabespreking.",
+    "ctaText": "Meld je aan"
+  },
+  "individual": {
+    "title": "Individueel gesprek",
+    "price": "€90,-",
+    "priceUnit": "per uur",
+    "description": "Een persoonlijk gesprek waarin we samen kijken naar wat er voor jou speelt. Op jouw tempo, met oprechte aandacht.",
+    "ctaText": "Plan een gesprek"
+  },
+  "packagesTitle": "Pakketten individuele gesprekken",
+  "packagesSubtitle": "Kies een pakket dat bij jouw traject past.",
+  "packages": [],
+  "finalCta": {
+    "title": "Nog vragen over de tarieven?",
+    "text": "Neem gerust vrijblijvend contact op. Samen bekijken we welke vorm het beste bij jou past.",
+    "ctaText": "Neem contact op"
+  }
+}

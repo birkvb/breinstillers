@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
 
   const { searchParams } = new URL(request.url);
   const page = searchParams.get("page");
-  if (!page || !["home", "wietske", "contact"].includes(page)) {
+  if (!page || !["home", "wietske", "contact", "tarieven"].includes(page)) {
     return NextResponse.json({ error: "Invalid page" }, { status: 400 });
   }
 
@@ -35,7 +35,7 @@ export async function PUT(request: NextRequest) {
   if (!checkAuth(request)) return unauthorized();
 
   const { page, content, sha } = await request.json();
-  if (!page || !["home", "wietske", "contact"].includes(page)) {
+  if (!page || !["home", "wietske", "contact", "tarieven"].includes(page)) {
     return NextResponse.json({ error: "Invalid page" }, { status: 400 });
   }
 
